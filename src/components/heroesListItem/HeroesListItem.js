@@ -7,7 +7,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 const HeroesListItem = ({ id, name, description, element }) => {
-  const { heroes } = useSelector((state) => state);
+  const { heroes } = useSelector((state) => state.heroes);
   const dispatch = useDispatch();
   const { request } = useHttp();
   let elementClassName;

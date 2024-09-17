@@ -19,10 +19,28 @@
       "element": "water"
     },
     {
-      "id": "fb24ab1d-6fa3-4891-a8c8-34f680caff1a",
-      "name": "thor",
+      "id": "e6df8ac7-fe18-48a9-b072-33bbd7552cb5",
+      "name": "Iron man",
+      "description": "some",
+      "element": "fire"
+    },
+    {
+      "id": "03ebe88a-f6b7-4141-ac72-c809a3343b25",
+      "name": "Batman",
+      "description": "some",
+      "element": "earth"
+    },
+    {
+      "id": "45feca03-3214-4de9-85ff-f23e5a64d90a",
+      "name": "Thor",
       "description": "some",
       "element": "wind"
+    },
+    {
+      "id": "6323b8fe-2e6a-440b-a716-038dc78fa4a9",
+      "name": "Captain America",
+      "description": "some",
+      "element": "water"
     }
   ],
   "filters": [

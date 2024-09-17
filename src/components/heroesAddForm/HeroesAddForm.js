@@ -8,7 +8,8 @@ import {
 } from "../../actions";
 
 const HeroesAddForm = () => {
-  const { heroes, filters } = useSelector((state) => state);
+  const { filters } = useSelector((state) => state.filters);
+  const { heroes } = useSelector((state) => state.heroes);
   const dispatch = useDispatch();
   const { request } = useHttp();
 
