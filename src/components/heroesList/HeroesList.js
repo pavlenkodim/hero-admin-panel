@@ -44,8 +44,6 @@ const HeroesList = () => {
     });
   };
 
-  console.log(heroes);
-
   const elements = renderHeroesList(heroes);
   return <ul>{elements}</ul>;
 };
