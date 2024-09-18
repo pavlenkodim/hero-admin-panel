@@ -1,15 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
 import { useHttp } from "../../hooks/http.hook";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  heroesFetching,
-  heroesFetched,
-  heroesFetchingError,
-} from "../../actions";
+import { heroCreated } from "../heroesList/heroesSlice";
 
 const HeroesAddForm = () => {
   const { filters } = useSelector((state) => state.filters);
-  const { heroes } = useSelector((state) => state.heroes);
   const dispatch = useDispatch();
   const { request } = useHttp();
 
@@ -24,10 +19,9 @@ const HeroesAddForm = () => {
     if (data.element === "not_change") {
       return;
     }
-    dispatch(heroesFetching());
     request("http://localhost:3001/heroes", "POST", JSON.stringify(data))
-      .then((data) => dispatch(heroesFetched([...heroes, data])))
-      .catch((e) => dispatch(heroesFetchingError()));
+      .then(dispatch(heroCreated(data)))
+      .catch((e) => console.error(e));
   };
 
   return (

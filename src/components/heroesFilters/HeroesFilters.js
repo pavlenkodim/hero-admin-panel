@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useHttp } from "../../hooks/http.hook";
-import { filtersActive, fetchFilters } from "../../actions";
+import { fetchFilters } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
+import { filtersChanged } from "./filtersSlice";
 
 const HeroesFilters = () => {
   const { filters, activeFilter } = useSelector((state) => state.filters);
@@ -25,7 +26,7 @@ const HeroesFilters = () => {
               className={classNames("btn", className, {
                 active: value === activeFilter,
               })}
-              onClick={() => dispatch(filtersActive(value))}
+              onClick={() => dispatch(filtersChanged(value))}
             >
               {label}
             </button>
