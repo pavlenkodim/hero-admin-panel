@@ -2,11 +2,7 @@ import { useHttp } from "../../hooks/http.hook";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import {
-  heroesFetching,
-  heroesFetched,
-  heroesFetchingError,
-} from "../../actions";
+import { fetchHeroes } from "../../actions";
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
 
@@ -17,14 +13,7 @@ const HeroesList = () => {
   const { request } = useHttp();
 
   useEffect(() => {
-    dispatch(heroesFetching());
-    const url =
-      activeFilter === "all"
-        ? "http://localhost:3001/heroes"
-        : `http://localhost:3001/heroes?element=${activeFilter}`;
-    request(url)
-      .then((data) => dispatch(heroesFetched(data)))
-      .catch(() => dispatch(heroesFetchingError()));
+    dispatch(fetchHeroes(request, activeFilter));
     // eslint-disable-next-line
   }, [activeFilter]);
 
