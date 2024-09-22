@@ -35,12 +35,6 @@
       "name": "Thor",
       "description": "some",
       "element": "wind"
-    },
-    {
-      "id": "36b5fd1e-bc4d-4b10-bb08-e3293d8a0ef6",
-      "name": "Captain America",
-      "description": "some",
-      "element": "water"
     }
   ],
   "filters": [
